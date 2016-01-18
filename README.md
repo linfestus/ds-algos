@@ -1,2 +1,2 @@
 # ds-algos
-# This repository contains all the basic programs and algorithms in c++
+This repository contains some basic programs and most widely used algorithms in c++
