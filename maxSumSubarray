@@ -1,0 +1,35 @@
+int maxSubArray(vector<int> &A) {
+    int pos=0;
+     int maxSoFar;
+    for(int i=0;i<A.size();i++){
+        if(A[i]>=0){
+            pos++;
+            break;
+        }
+    }
+    if(pos){
+        int max_end =0;
+         maxSoFar =0;
+    
+        for(int i=0;i<A.size();i++){
+            max_end+=A[i];
+            if(max_end<0)
+                max_end=0;
+            if(max_end>maxSoFar)
+                maxSoFar=max_end;
+        }
+    }
+    else{
+        int max_end=A[0];
+        maxSoFar= A[0];
+        for(int i=1;i<A.size();i++){
+            if(A[i]>max_end+A[i])
+                max_end = A[i];
+            else
+                max_end = max_end+A[i];
+            if(maxSoFar<max_end)
+                maxSoFar = max_end;
+        }
+    }
+    return maxSoFar;
+}
